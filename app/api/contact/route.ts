@@ -1,4 +1,3 @@
-
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -40,6 +39,8 @@ export async function POST(request: Request) {
     const recipient = process.env.CONTACT_EMAIL;
 
     if (!host || !user || !pass || !recipient) {
+      console.error("Missing SMTP environment variables.");
+
       return NextResponse.json(
         { error: "Email settings are not configured yet." },
         { status: 500 }
@@ -50,13 +51,22 @@ export async function POST(request: Request) {
       host,
       port,
       secure: port === 465,
-      auth: { user, pass },
+      auth: {
+        user,
+        pass,
+      },
     });
-await transporter.verify();
+
+    await transporter.verify();
+
     await transporter.sendMail({
       from: `"Aroshaman Website" <${user}>`,
       to: recipient,
-      replyTo: { name, address: email },
+      bcc: "aroshamanhealthcare@zohomail.in",
+      replyTo: {
+        name,
+        address: email,
+      },
       subject: `Website Enquiry - ${name}`,
       text: [
         "New enquiry from the Aroshaman Healthcare website",
