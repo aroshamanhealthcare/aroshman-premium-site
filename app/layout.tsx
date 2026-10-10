@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description:
     "Aroshaman Healthcare Private Limited — pharmaceutical healthcare products and solutions.",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/logo/icon.png",
+    shortcut: "/logo/icon.png",
+    apple: "/logo/icon.png",
   },
 };
 
