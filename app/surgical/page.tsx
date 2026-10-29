@@ -184,7 +184,6 @@ export default function SurgicalPage() {
               href="/surgical/products"
               className="future-category-card"
               key={category.number}
-              key={category.number}
             >
               <div className="future-category-top">
                 <span>{category.number} / 04</span>
