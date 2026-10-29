@@ -17,7 +17,8 @@
     "nodemailer": "^10.0.16",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "three": "^0.186.1"
+    "three": "^0.186.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
